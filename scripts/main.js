@@ -81,21 +81,15 @@ function startStandup(){
   timerInterval = setInterval(everySecond, 1000);
 }
 
-async function setup(){
+// This function is repeated on the reg
+function monitorToolbar(){
 
     const toolbarSelector = "#asana_main_page > div.ProjectPage > div.ProjectPage-board > div > div > div > div.FullWidthPageStructureWithDetailsOverlay-mainContent > div.Board > div.PageToolbarStructure.PageToolbarStructure--medium.ProjectBoardPageToolbar.Board-pageToolbar > div.PageToolbarStructure-rightChildren";
     let toolbarRight = document.querySelector(toolbarSelector);
-    while (!toolbarRight){
-        console.log("ASE: Failed to find toolbar. Trying again...");
-        await delay(1000);
-        toolbarRight = document.querySelector(toolbarSelector);
+    if (!toolbarRight){
+        console.log("ASE: Failed to find Asana toolbar. Trying again...");
+        return;
     }
-    $(toolbarRight).on('DOMSubtreeModified', ()=>{
-        $(toolbarRight).off('DOMSubtreeModified');
-        setup();
-    });
-
-    console.log('ASE: Found toolbar. Setting up extension');
 
     if (!standupToolbar){
         console.log('ASE: Creating standupToolbar');
@@ -118,7 +112,6 @@ async function setup(){
     let aseToolbarFound = false;
     for (const child of toolbarRight.children){
         if (child.id === "ASE_Toolbar"){
-            console.log("ASE: ASE_Toolbar present!");
             aseToolbarFound = true;
             break;
         }
@@ -129,5 +122,4 @@ async function setup(){
     }
 }
 
-//document.addEventListener("DOMContentLoaded", main);
-$(document).ready(setup);
+$(document).ready(() => setInterval(monitorToolbar, 1000));
