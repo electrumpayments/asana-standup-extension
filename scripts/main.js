@@ -84,7 +84,7 @@ function startStandup(){
 // This function is repeated on the reg
 function monitorToolbar(){
 
-    const toolbarSelector = "#asana_main_page > div.ProjectPage > div.ProjectPage-board > div > div > div > div.FullWidthPageStructureWithDetailsOverlay-mainContent > div.Board > div.PageToolbarStructure.PageToolbarStructure--medium.ProjectBoardPageToolbar.Board-pageToolbar > div.PageToolbarStructure-rightChildren";
+    const toolbarSelector = "#asana_main_page > div > div.ProjectPage > div.ProjectPage-board > div > div > div > div.FullWidthPageStructureWithDetailsOverlay-mainContent > div.Board > div.PageToolbarStructure.PageToolbarStructure--medium.ProjectBoardPageToolbar.Board-pageToolbar > div.PageToolbarStructure-rightChildren";
     let toolbarRight = document.querySelector(toolbarSelector);
     if (!toolbarRight){
         console.log("ASE: Failed to find Asana toolbar. Trying again...");
