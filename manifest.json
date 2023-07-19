@@ -9,6 +9,7 @@
         "32": "images/icon-32.png",
         "16": "images/icon-16.png"
     },
+    "author": "hello@electrum.co.za",
     "content_scripts": [
         {
             "js": [

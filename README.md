@@ -1,16 +1,20 @@
-# asana-standup-extension
-Chromium extension to automate Standup in Asana
+# Asana Standup Extension
+
+Chromium extension that automates Standup in Asana by adding a convenient 1-minute timer to the top toolbar.
+
+![Screenshot](images/screenshot.png)
 
 ## Installation
 
-I'm not paying for a Chrome Developer account, so install this plugin manually:
+Currently only manual installation is supported:
 
 1. Clone this repo somewhere
 2. In your chromium-based browser, navigate to `chrome://extensions`.
-3. Somewhere on this page there will be a "Developer mode" toggle button. Enable it.
-4. Now somewhere on this page there will be a button that says "Load unpacked". Click it.
+3. Click the "Developer mode" toggle button so that it is enabled.
+4. Click "Load unpacked".
 5. Select the dir where you cloned this repo.
-6. Profit.
+
+The timer will automatically appear on any project viewed from `app.asana.com`.
 
 ## Updates
 
